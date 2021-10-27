@@ -6,6 +6,7 @@ const Anchor = styled.a`
   text-align: center;
   text-decoration: none;
   width: 75px;
+  margin-top: 10px;
 `;
 
 const Image = styled.img`

@@ -5,3 +5,8 @@
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.App {
+  margin: 0 auto;
+  max-width: 500px;
+}
