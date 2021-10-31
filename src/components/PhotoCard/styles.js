@@ -3,6 +3,7 @@ import { fadeIn } from "../../styles/animation";
 
 const Card = styled.article`
   background-color: white;
+  min-height: 200px;
 `;
 
 const ContainerImg = styled.div`
