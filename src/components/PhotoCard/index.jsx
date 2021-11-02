@@ -16,7 +16,7 @@ export const PhotoCard = ({ id, likes = 0, src = defaultImage }) => {
     <Card ref={cardRef}>
       {show ? (
         <>
-          <a href={`/detail/${id}`}>
+          <a href={`?detail=${id}`}>
             <ContainerImg>
               <Image src={src} alt="" />
             </ContainerImg>

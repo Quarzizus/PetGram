@@ -1,12 +1,36 @@
 import { PhotoCard } from "../PhotoCard";
-import { photos } from "../../db.json";
+import { useQuery, gql } from "@apollo/client";
 
-export const ListOfPhotoCards = () => {
+const withPhotos = gql`
+  query getPhotos($categoryId: ID) {
+    photos(categoryId: $categoryId) {
+      id
+      likes
+      src
+      userId
+      liked
+      categoryId
+    }
+  }
+`;
+
+const ListOfPhotoCards = ({ onLoading, onError, categoryId }) => {
+  const { error, loading, data } = useQuery(withPhotos, {
+    variables: { categoryId },
+  });
+
   return (
     <div>
-      {photos.map((photo) => {
-        return <PhotoCard key={photo.id} {...photo} />;
-      })}
+      {loading && onLoading()}
+      {error && onError(error.message)}
+
+      {!error &&
+        !loading &&
+        data.photos.map((photo) => {
+          return <PhotoCard key={photo.id} {...photo} />;
+        })}
     </div>
   );
 };
+
+export { ListOfPhotoCards };
