@@ -1,4 +1,3 @@
-import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { PhotoCard } from "../components/PhotoCard";
 

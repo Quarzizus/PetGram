@@ -1,11 +1,14 @@
 import defaultImage from "../../images/defaultcategoryimage.jpeg";
-import { Anchor, Image } from "./styles";
+import { Picture, Image } from "./styles";
+import { Link } from "@reach/router";
 
 export const Category = ({ cover = defaultImage, path, emoji = "?" }) => {
   return (
-    <Anchor href={path}>
-      <Image src={cover} />
-      {emoji}
-    </Anchor>
+    <Link to={path}>
+      <Picture>
+        <Image src={cover} />
+        {emoji}
+      </Picture>
+    </Link>
   );
 };

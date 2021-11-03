@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Anchor = styled.a`
+const Picture = styled.picture`
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -19,4 +19,4 @@ const Image = styled.img`
   overflow: hidden;
 `;
 
-export { Anchor, Image };
+export { Picture, Image };
