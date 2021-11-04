@@ -1,7 +1,7 @@
-import React from "react";
+import { UserForm } from "../components/UserForm";
 
 const User = ({ login, notRegisterUser }) => {
-  return <div>{!login ? notRegisterUser() : <h2>Perfil of User</h2>}</div>;
+  return <div>{!login ? notRegisterUser() : <UserForm title="Login" />}</div>;
 };
 
 export { User };
