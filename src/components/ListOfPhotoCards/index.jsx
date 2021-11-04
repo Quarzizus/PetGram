@@ -20,7 +20,7 @@ const ListOfPhotoCards = ({ onLoading, onError, categoryId }) => {
   });
 
   return (
-    <div>
+    <div className="ListOfPhotoCards">
       {loading && onLoading()}
       {error && onError(error.message)}
 
