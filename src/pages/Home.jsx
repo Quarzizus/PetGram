@@ -1,16 +1,21 @@
-import React from "react";
 import { ListOfCategories } from "../components/ListOfCategories/";
 import { ListOfPhotoCards } from "../components/ListOfPhotoCards/";
 
-const Home = ({ categoryId }) => {
+const Home = ({ categoryId, login, notRegisterUser }) => {
   return (
     <>
-      <ListOfCategories />
-      <ListOfPhotoCards
-        onLoading={() => <h2>Loading...</h2>}
-        onError={(error) => <h2>Error...{error}</h2>}
-        categoryId={categoryId}
-      />
+      {!login ? (
+        notRegisterUser()
+      ) : (
+        <>
+          <ListOfCategories />
+          <ListOfPhotoCards
+            onLoading={() => <h2>Loading...</h2>}
+            onError={(error) => <h2>Error...{error}</h2>}
+            categoryId={categoryId}
+          />
+        </>
+      )}
     </>
   );
 };

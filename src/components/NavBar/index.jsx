@@ -7,7 +7,7 @@ const NavBar = () => {
       <Link to="/">
         <MdHome size="32px" />
       </Link>
-      <Link to="/favs">
+      <Link to="/favorites">
         <MdFavoriteBorder size="32px" />
       </Link>
       <Link to="/user">
