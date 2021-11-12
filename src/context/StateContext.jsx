@@ -2,7 +2,9 @@ import { AppContext } from "./AppContext";
 import { useState } from "react";
 
 const StateContext = ({ children }) => {
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(() => {
+    return sessionStorage.getItem("token");
+  });
 
   const value = {
     logged,

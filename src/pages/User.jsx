@@ -25,6 +25,7 @@ const User = () => {
         title: "Register",
         toggleMessage: "You have already count?",
         setLogged,
+        keyForm: "signup",
       });
     } else {
       return WithRegisterLoginForm(UserForm)({
@@ -36,6 +37,7 @@ const User = () => {
         title: "Login",
         toggleMessage: "I haven't count",
         setLogged,
+        keyForm: "login",
       });
     }
   };

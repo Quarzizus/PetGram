@@ -12,12 +12,20 @@ const UserForm = ({
   title,
   toggleMessage,
   setLogged,
+  keyForm,
 }) => {
   const { valuesForm, handlerInput } = useInputValue();
 
-  const handlerClick = () => {
-    onClick({ variables: { input: valuesForm } });
-    setLogged(true);
+  const handlerClick = async () => {
+    try {
+      const req = await onClick({ variables: { input: valuesForm } });
+      const token = await req.data[keyForm];
+      sessionStorage.setItem("token", token);
+      console.log(token);
+      setLogged(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

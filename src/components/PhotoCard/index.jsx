@@ -1,37 +1,25 @@
 import defaultImage from "../../images/defaultcategoryimage.jpeg";
 import { Card, ContainerImg, Image } from "./styles";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useNearScreen } from "../../hooks/useNearScreen";
 import { LikeButton } from "../LikeButton";
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { Link } from "@reach/router";
+import { likePhoto } from "../../graphql/Mutations";
+import { favs } from "../../graphql/Queries";
 
-export const PhotoCard = ({ id, likes = 0, src = defaultImage }) => {
-  const key = `like-${id}`;
-
-  const [liked, setLiked] = useLocalStorage(key, false);
+export const PhotoCard = ({ id, liked, likes = 0, src = defaultImage }) => {
   const [cardRef, show] = useNearScreen();
 
-  const likeAnonymousPhoto = gql`
-    mutation likeAnonymousPhoto($input: LikePhoto!) {
-      likeAnonymousPhoto(input: $input) {
-        id
-        liked
-        likes
-      }
-    }
-  `;
-
-  const [mutateLike] = useMutation(likeAnonymousPhoto);
+  const [mutateLike] = useMutation(likePhoto, {
+    refetchQueries: [{ query: favs }],
+  });
 
   const handleClickLike = () => {
-    !liked &&
-      mutateLike({
-        variables: {
-          input: { id },
-        },
-      });
-    setLiked(!liked);
+    mutateLike({
+      variables: {
+        input: { id },
+      },
+    });
   };
 
   return (

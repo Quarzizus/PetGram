@@ -11,4 +11,13 @@ const login = gql`
   }
 `;
 
-export { signup, login };
+const likePhoto = gql`
+  mutation likePhoto($input: LikePhoto!) {
+    likePhoto(input: $input) {
+      id
+      liked
+      likes
+    }
+  }
+`;
+export { signup, login, likePhoto };

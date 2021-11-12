@@ -1,18 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import { PhotoCard } from "../components/PhotoCard";
+import { getSinglePhoto } from "../graphql/Queries";
 
-const getSinglePhoto = gql`
-  query getSinglePhoto($id: ID!) {
-    photo(id: $id) {
-      id
-      categoryId
-      src
-      likes
-      userId
-      liked
-    }
-  }
-`;
 const WithDetailPhotoCard = ({ id, onLoading, onError }) => {
   const { error, loading, data } = useQuery(getSinglePhoto, {
     variables: {
