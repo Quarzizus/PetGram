@@ -1,5 +1,5 @@
-const Favorites = ({ login, notRegisterUser }) => {
-  return <div>{!login ? notRegisterUser() : <h2>Favorites</h2>}</div>;
+const Favorites = ({ logged, notRegisterUser }) => {
+  return <div>{!logged ? notRegisterUser() : <h2>Favorites</h2>}</div>;
 };
 
 export { Favorites };

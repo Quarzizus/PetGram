@@ -1,7 +1,7 @@
 import React from "react";
 import { WithDetailPhotoCard } from "../containers/WithDetailPhotoCard";
 
-const Detail = ({ detailId, login, notRegisterUser }) => {
+const Detail = ({ detailId, logged, notRegisterUser }) => {
   return (
     <WithDetailPhotoCard
       id={detailId}

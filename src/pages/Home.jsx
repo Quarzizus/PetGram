@@ -1,10 +1,10 @@
 import { ListOfCategories } from "../components/ListOfCategories/";
 import { ListOfPhotoCards } from "../components/ListOfPhotoCards/";
 
-const Home = ({ categoryId, login, notRegisterUser }) => {
+const Home = ({ categoryId, logged, notRegisterUser }) => {
   return (
     <>
-      {!login ? (
+      {!logged ? (
         notRegisterUser()
       ) : (
         <>

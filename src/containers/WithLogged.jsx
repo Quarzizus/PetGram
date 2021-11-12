@@ -5,11 +5,11 @@ import { AppContext } from "../context/AppContext";
 import { useContext } from "react";
 
 const WithLogged = ({ children }) => {
-  const { login } = useContext(AppContext);
+  const { logged } = useContext(AppContext);
 
   const Routes = Children.toArray(children).map((child) =>
     cloneElement(child, {
-      login,
+      logged,
       notRegisterUser: () => <NotRegisterUser />,
     })
   );
