@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { signup, login } from "../graphql/Mutations";
 import { UserForm } from "../components/UserForm";
 import { AppContext } from "../context/AppContext";
+import { Button } from "../components/UserForm/styles";
 
 const User = () => {
   const [typeForm, setTypeForm] = useState(false);
@@ -42,7 +43,25 @@ const User = () => {
     }
   };
 
-  return <div>{logged ? <h2>User...</h2> : Form()}</div>;
+  return (
+    <div>
+      {logged ? (
+        <div>
+          <h2>User...</h2>
+          <Button
+            onClick={() => {
+              setLogged(false);
+              sessionStorage.removeItem("token");
+            }}
+          >
+            Cerrar Sección
+          </Button>
+        </div>
+      ) : (
+        Form()
+      )}
+    </div>
+  );
 };
 
 export { User };
