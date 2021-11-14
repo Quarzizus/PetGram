@@ -21,7 +21,6 @@ const UserForm = ({
       const req = await onClick({ variables: { input: valuesForm } });
       const token = await req.data[keyForm];
       sessionStorage.setItem("token", token);
-      console.log(token);
       setLogged(true);
     } catch (error) {
       console.log(error);

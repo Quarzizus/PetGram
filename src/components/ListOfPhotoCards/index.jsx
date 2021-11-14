@@ -1,8 +1,9 @@
 import { PhotoCard } from "../PhotoCard";
 import { useQuery, gql } from "@apollo/client";
 import { withPhotos } from "../../graphql/Queries";
+import { memo } from "react";
 
-const ListOfPhotoCards = ({ onLoading, onError, categoryId }) => {
+const ListOfPhotoCardsComponent = ({ onLoading, onError, categoryId }) => {
   const { error, loading, data } = useQuery(withPhotos, {
     variables: { categoryId },
   });
@@ -21,4 +22,4 @@ const ListOfPhotoCards = ({ onLoading, onError, categoryId }) => {
   );
 };
 
-export { ListOfPhotoCards };
+export const ListOfPhotoCards = memo(ListOfPhotoCardsComponent);

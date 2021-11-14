@@ -1,5 +1,6 @@
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { Button } from "../PhotoCard/styles";
+import PropTypes from "prop-types";
 
 const LikeButton = ({ likes, onClick, liked }) => {
   const IconLike = liked ? MdFavorite : MdFavoriteBorder;
@@ -9,6 +10,12 @@ const LikeButton = ({ likes, onClick, liked }) => {
       {likes} likes!
     </Button>
   );
+};
+
+LikeButton.PropTypes = {
+  likes: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  Liked: PropTypes.number.isRequired,
 };
 
 export { LikeButton };

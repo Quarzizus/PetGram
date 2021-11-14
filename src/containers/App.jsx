@@ -3,10 +3,9 @@ import { Favorites } from "../pages/Favorites";
 import { Detail } from "../pages/Detail";
 import { User } from "../pages/User";
 import { Logo } from "../components/Logo";
-import { Router } from "@reach/router";
 import { NavBar } from "../components/NavBar";
-import "../styles/GlobalStyles.css";
 import { WithLogged } from "./WithLogged";
+import "../styles/GlobalStyles.css";
 
 function App() {
   return (
