@@ -29,4 +29,12 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    rollupOptions: {
+      external: ["react", "react-dom"],
+    },
+  },
+  optimizeDeps: {
+    include: ["@apollo/client/core", "@apollo/client/link/error"],
+  },
 });
