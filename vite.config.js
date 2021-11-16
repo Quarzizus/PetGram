@@ -17,12 +17,12 @@ export default defineConfig({
           {
             src: "favivon.png",
             sizes: "512x512",
-            type: "image/svg",
+            type: "image/png",
           },
           {
             src: "favivon.png",
             sizes: "512x512",
-            type: "image/svg",
+            type: "image/png",
             purpose: "any maskable",
           },
         ],
