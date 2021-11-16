@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      includeAssets: ["favicon.svg"],
+      includeAssets: ["favicon.png"],
       manifest: {
         name: "PetGram",
         short_name: "PetGram",
@@ -15,12 +15,12 @@ export default defineConfig({
         theme_color: "#FFFFFF",
         icons: [
           {
-            src: "favivon.svg",
+            src: "favivon.png",
             sizes: "512x512",
             type: "image/svg",
           },
           {
-            src: "favivon.svg",
+            src: "favivon.png",
             sizes: "512x512",
             type: "image/svg",
             purpose: "any maskable",
