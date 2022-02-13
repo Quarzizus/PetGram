@@ -8,6 +8,11 @@ const Form = styled.form`
   align-items: center;
   justify-content: space-around;
   padding: 25px;
+  p {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 const Input = styled.input`
